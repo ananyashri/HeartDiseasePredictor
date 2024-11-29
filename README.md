@@ -1,5 +1,6 @@
 ## Heart Disease Predictor
 
-Uses AI to predict the likelihood of contracting a heart disease based off of user's medical data
+Uses AI to predict whether a user has heart disease based off of user's medical data, using various ML models. 
 
 Ananya
+Aditya 
