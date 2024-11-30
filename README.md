@@ -1,6 +1,20 @@
-## Heart Disease Predictor
+# Heart Disease Predictor
 
-Uses AI to predict whether a user has heart disease based off of user's medical data, using various ML models. 
+Uses AI to predict whether a user has heart disease based off of user's medical data, using various ML models.
 
 Ananya
-Aditya 
+Aditya
+
+### Python Dependencies
+
+```
+pip install scikit-learn Flask os pandas
+```
+
+## How to run Client
+
+In your terminal
+
+```
+python -m flask run
+```
