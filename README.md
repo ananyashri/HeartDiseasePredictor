@@ -13,7 +13,7 @@ pip install scikit-learn Flask os pandas
 
 ## How to run Client
 
-In your terminal
+In your terminal run the app.py file, then
 
 ```
 python -m flask run
