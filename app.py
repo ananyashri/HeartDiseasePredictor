@@ -10,7 +10,12 @@ def index():
     #return render_template('index.html', prediction=prediction_message)
     return render_template('index.html')
 
-@app.route('/submitted', methods=['POST'])
+
+@app.route('/enterData')
+def predict(): 
+    return render_template('enterData.html')
+
+@app.route('/submitted', methods=['GET', 'POST'])
 def submitted():
     a = request.form.get('Age')
     b = request.form.get('sex')
@@ -28,11 +33,11 @@ def submitted():
 
     prediction_message = "" 
     try:
-        values = list(map(int, list(a, b, c, d, e, f, g, h, i, j, k, l, m)))
+        values = list(map(float, list(a, b, c, d, e, f, g, h, i, j, k, l, m)))
         prediction_message = call_model(values[0], values[1], values[2], values[3], values[4],
                                         values[5], values[6], values[7], values[8], values[9],
                                         values[10], values[11], values[12])
     except:
         prediction_message = "You have typed a non-integer or a non-decimal value. Please re-enter the appropriate values"
 
-    return render_template('index.html', prediction=prediction_message)
+    return render_template('enterData.html', prediction=prediction_message)

@@ -109,6 +109,24 @@ form {
   text-align: center;
 }
 
+form {
+  text-align: center;
+  text-align: left;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+#submitAll {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15;
+  margin-top: 15px;
+}
+
+.idContainer {
+  margin: 10px
+}
+
 @media (min-width: 600px) {
   nav ul {
     display: flex;

@@ -1,0 +1,162 @@
+@ -0,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bitter:ital,wght@0,100..900;1,100..900&family=Chicle&family=Dongle&family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Mandali&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=SUSE:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/3843/3843010.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Uses AI to predict whether a user has heart disease based off of user's medical data, using various ML models."
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Heart Disease Predictor</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="./enterData">Predict</a></li>
+      </ul>
+    </nav>
+
+    <header class="home">
+      <h1><a href="index.html">Enter Data Here!</a></h1>
+    </header>
+
+    <div id="wrapper">
+      <main>
+        <h1>Enter Health Data</h1>
+        <p>
+          After accessing your medical information from your doctor, or having your doctor assist you, input data for each of the following fields below. 
+          Please make sure that you input data accurately and completely for every field, or else the prediction model will not work accurately! For reference
+          on what each of these fields mean, please click <a href="#" id = 'popupLink'>here</a>. 
+        </p>
+
+        <!-- 
+        Start of form to enter data 
+        -->
+        <form action="/submitted" method="POST">
+            <label for = 'Age'>Age</label>
+            <input type = 'text' id = 'Age' name = 'Age' required/>
+             
+            <!-- 1 is male, 0 is female -->
+             <div class = 'idContainer'>
+            <label for = 'Sex'>Sex</label>
+            <select id = "sex" name = 'sex' required>
+               <option value = "1" disable selected>Male</option> 
+               <option value = "0" disable selected>Female</option> 
+            </select>
+             </div>
+   
+            <div class = 'idContainer'>
+            <label for = 'chest pain'>Chest Pain</label>
+            <select id = "chest_pain" name = 'chest_pain' required>
+             <option value = "0" disable selected>Low</option> 
+             <option value = "1" disable selected>Moderate</option> 
+             <option value = "2" disable selected>High</option> 
+             <option value = "3" disable selected>Very High</option> 
+          </select>
+            </div>
+            
+            <div class = 'idContainer'>
+            <label for = 'resting blood pressure'>Resting Blood Pressure</label>
+            <input type = 'text' id = 'resting_blood_pressure' name = 'resting_blood_pressure' required/>
+            </div>
+            
+            <div class = 'idContainer'>
+            <label for = 'cholesterol'>Cholesterol</label>
+            <input type = 'text' id = 'cholesterol' name = 'cholesterol' required/>
+            </div>
+            
+            <div class = 'idContainer'> 
+            <label for = 'fbs'>Fasted Blood Sugar</label>
+            <select id = "fbs" name = 'fbs' required>
+             <option value = "1" disable selected> greater than 120 mg/dl</option> 
+             <option value = "0" disable selected> less than 120 mg/dl </option> 
+            </select>
+            </div>
+           
+            <div class = 'idContainer'>
+            <label for = 'restecg'>Resting Electrocardiograph Results</label>
+            <select id = "restecg" name = 'restecg' required>
+             <option value = "0" disable selected>Normal (0)</option> 
+             <option value = "1" disable selected>ST-T Wave Abnormality (1)</option> 
+             <option value = "2" disable selected>Left Ventricular Abnormality or Probable Abnormality (2)</option> 
+            </select>
+            </div>
+            
+            <div class = 'idContainer'>
+            <label for = 'thalatch'>Max Heart Rate Achieved</label>
+            <input type = 'text' id = 'thalatch' name = 'thalatch' required/>
+             </div>
+   
+             <div class = 'idContainer'>
+            <label for = 'exang'>Exercise Induced Angina</label>
+            <select id = "exang" name = 'exang' required>
+             <option value = "0" disable selected>True</option> 
+             <option value = "1" disable selected>False</option> 
+            </select>
+            </div>
+   
+            <div class = 'idContainer'>
+            <label for = 'oldpeak'>Oldpeak ECG Result</label>
+            <input type = 'text' id = 'oldpeak' name = 'oldpeak' required/>
+            </div>
+   
+            <div class = 'idContainer'>
+            <label for = 'slope'>Slope</label>
+            <select id = "slope" name = 'slope' required>
+             <option value = "0" disable selected>Upslope</option> 
+             <option value = "1" disable selected>Horizontal</option> 
+             <option value = "2" disable selected>Downslope</option> 
+            </select>
+            </div>
+   
+            <div class = 'idContainer'>
+            <label for = 'ca'>Number of Obstructed Blood Vessels</label>
+            <select id = "ca" name = 'ca' required>
+             <option value = "0" disable selected>No major colored vessels</option> 
+             <option value = "1" disable selected>1 major colored vessel</option> 
+             <option value = "2" disable selected>2 major colored vessels</option> 
+             <option value = "3" disable selected>3 major colored vessels</option> 
+             <option value = "4" disable selected>4 major colored vessels</option> 
+            </select>
+            </div>
+   
+            <div class = 'idContainer'>
+            <label for = 'thal'>Thalassemia</label>
+            <select id = "thal" name = 'thal' required> 
+             <option value = "1" disable selected>Normal</option> 
+             <option value = "2" disable selected>Fixed Defect</option> 
+             <option value = "3" disable selected>Reversable defect</option> 
+            </select>
+   
+            <div class = 'idContainer'>
+             <button type = 'submit' id = 'submitAll'>Submit All</button>
+           </div>
+           </form>
+         </div>
+
+
+        <h1>Prediction Result</h1>
+        <p id = "predictionResult">{{ prediction }}</p>
+      </main>
+
+      <footer>
+        Copyright © 2024 MWEHEHEHHEHEHEH <br />
+        <a href="mailto:NAN"
+          >No email link just yet!</a
+        >
+      </footer>
+  </body>
+</html>
