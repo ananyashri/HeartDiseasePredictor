@@ -8,7 +8,7 @@ Aditya
 ### Python Dependencies
 
 ```
-pip install scikit-learn Flask os pandas
+pip install scikit-learn flask os pandas
 ```
 
 ## How to run Client

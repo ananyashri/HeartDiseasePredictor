@@ -58,7 +58,7 @@
         -->
         <h1>Enter Health Data</h1>
         
-        <form>
+        <form action="/submitted" method="POST">
          <label for = 'Age'>Age</label>
          <input type = 'text' id = 'Age' name = 'Age' required/>
           
@@ -153,11 +153,11 @@
           <option value = "2" disable selected>Fixed Defect</option> 
           <option value = "3" disable selected>Reversable defect</option> 
          </select>
-        </form>
-      </div>
 
-      <div>
-        <button type = 'submit' id = 'submitAll'>Submit All</button>
+         <div>
+          <button type = 'submit' id = 'submitAll'>Submit All</button>
+        </div>
+        </form>
       </div>
 
         <h1>Prediction Result</h1>
