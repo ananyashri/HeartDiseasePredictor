@@ -53,8 +53,127 @@
           Start your journey to better heart health today with Heart Disease Predictor. Take control of your well-being with cutting-edge technology designed to empower and inform you. 
         </div>
 
+        <!-- 
+        Start of form to enter data 
+        -->
+        <h1>Enter Health Data</h1>
+        
+        <form>
+         <label for = 'Age'>Age</label>
+         <input type = 'text' id = 'Age' required/>
+          
+         <!-- 1 is male, 0 is female -->
+          <div>
+         <label for = 'Sex'>Sex</label>
+         <select id = "sex" name = 'sex' required>
+            <option value = "" disable selected>Select your sex</option> 
+            <option value = "1" disable selected>Male</option> 
+            <option value = "0" disable selected>Female</option> 
+         </select>
+         <input type = 'submit' id = 'sex' value="submit">
+          </div>
+
+         <div>
+         <label for = 'chest pain'>Chest Pain</label>
+         <select id = "chest_pain" name = 'chest_pain' required>
+          <option value = "" disable selected>Select level of chest pain</option> 
+          <option value = "0" disable selected>Low</option> 
+          <option value = "1" disable selected>Moderate</option> 
+          <option value = "2" disable selected>High</option> 
+          <option value = "3" disable selected>Very High</option> 
+       </select>
+         <input type = 'submit' id = 'chest_pain' required/>
+         </div>
+         
+         <div>
+         <label for = 'resting blood pressure'>Resting Blood Pressure</label>
+         <input type = 'text' id = 'resting_blood_pressure' required/>
+         </div>
+         
+         <div>
+         <label for = 'cholesterol'>Cholesterol</label>
+         <input type = 'text' id = 'cholesterol' required/>
+         </div>
+         
+         <div>
+         <label for = 'fbs'>Fasted Blood Sugar</label>
+         <select id = "fbs" name = 'fbs' required>
+          <option value = "" disable selected></option> 
+          <option value = "1" disable selected> greater than 120 mg/dl</option> 
+          <option value = "0" disable selected> less than 120 mg/dl </option> 
+         </select>
+         <input type = 'submit' id = 'fbs' value="submit" required/>
+         </div>
+        
+         <div>
+         <label for = 'restecg'>Resting Electrocardiograph Results</label>
+         <select id = "restecg" name = 'restecg' required>
+          <option value = "" disable selected></option> 
+          <option value = "0" disable selected>Normal (0)</option> 
+          <option value = "1" disable selected>ST-T Wave Abnormality (1)</option> 
+          <option value = "2" disable selected>Left Ventricular Abnormality or Probable Abnormality (2)</option> 
+         </select>
+         <input type = 'submit' id = 'restecg' value = "submit" required/>
+         </div>
+         
+         <div>
+         <label for = 'thalatch'>Max Heart Rate Achieved</label>
+         <input type = 'text' id = 'thalatch' required/>
+          </div>
+
+          <div>
+         <label for = 'exang'>Exercise Induced Angina</label>
+         <select id = "exang" name = 'exang' required>
+          <option value = "" disable selected></option> 
+          <option value = "0" disable selected>True</option> 
+          <option value = "1" disable selected>False</option> 
+         </select>
+         <input type = 'submit' id = 'exang' value = "submit" required/>
+         </div>
+
+         <div>
+         <label for = 'oldpeak'>Oldpeak ECG Result</label>
+         <input type = 'text' id = 'oldpeak' required/>
+         </div>
+
+         <div>
+         <label for = 'slope'>Slope</label>
+         <select id = "slope" name = 'slope' required>
+          <option value = "" disable selected></option> 
+          <option value = "0" disable selected>Upslope</option> 
+          <option value = "1" disable selected>Horizontal</option> 
+          <option value = "2" disable selected>Downslope</option> 
+         </select>
+         <input type = 'submit' id = 'slope' value = "submit" required/>
+         </div>
+
+         <div>
+         <label for = 'ca'>Number of Obstructed Blood Vessels</label>
+         <select id = "ca" name = 'ca' required>
+          <option value = "" disable selected></option> 
+          <option value = "0" disable selected>No major colored vessels</option> 
+          <option value = "1" disable selected>1 major colored vessel</option> 
+          <option value = "2" disable selected>2 major colored vessels</option> 
+          <option value = "3" disable selected>3 major colored vessels</option> 
+          <option value = "4" disable selected>4 major colored vessels</option> 
+         </select>
+         <input type = 'submit' id = 'ca' value = "submit" required/>
+         </div>
+
+         <div>
+         <label for = 'thal'>Thalassemia</label>
+         <select id = "thal" name = 'thal' required>
+          <option value = "" disable selected></option> 
+          <option value = "1" disable selected>Normal</option> 
+          <option value = "2" disable selected>Fixed Defect</option> 
+          <option value = "3" disable selected>Reversable defect</option> 
+         </select>
+         <input type = 'submit' id = 'thal' value = "submit" required/>
+        </form>
+      </div>
+
         <h1>Prediction Result</h1>
-        <p>{{ prediction }}</p>
+        <p id = "predictionResult">{{ prediction }}</p>
       </main>
 
       <footer>
