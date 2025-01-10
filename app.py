@@ -6,8 +6,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    #prediction_message = call_model(50,1,0,144,200,0,0,126,1,0.9,1,0,3)
-    #return render_template('index.html', prediction=prediction_message)
     return render_template('index.html')
 
 
@@ -33,11 +31,11 @@ def submitted():
 
     prediction_message = "" 
     try:
-        values = list(map(float, list(a, b, c, d, e, f, g, h, i, j, k, l, m)))
-        prediction_message = call_model(values[0], values[1], values[2], values[3], values[4],
-                                        values[5], values[6], values[7], values[8], values[9],
-                                        values[10], values[11], values[12])
-    except:
-        prediction_message = "You have typed a non-integer or a non-decimal value. Please re-enter the appropriate values"
+        values = list(map(float, [a, b, c, d, e, f, g, h, i, j, k, l, m]))
+        prediction_message = call_model(*values)
+    except ValueError as e:
+        prediction_message = "Please enter valid numeric values for all fields."
+    except Exception as e:
+        prediction_message = "An unexpected error occurred. Please try again."
 
     return render_template('enterData.html', prediction=prediction_message)
