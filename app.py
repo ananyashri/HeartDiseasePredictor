@@ -10,10 +10,16 @@ def index():
 
 
 @app.route('/enterData')
-def predict(): 
+def renderEnterData(): 
     return render_template('enterData.html')
 
-@app.route('/submitted', methods=['GET', 'POST'])
+'''
+@app.route('/prediction')
+def renderPrediction():
+    return render_template('prediction.html')
+'''
+
+@app.route('/submitted', methods=['POST'])
 def submitted():
     a = request.form.get('Age')
     b = request.form.get('sex')
@@ -38,4 +44,4 @@ def submitted():
     except Exception as e:
         prediction_message = "An unexpected error occurred. Please try again."
 
-    return render_template('enterData.html', prediction=prediction_message)
+    return render_template('prediction.html', prediction=prediction_message)

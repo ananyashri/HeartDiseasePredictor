@@ -17,13 +17,26 @@ textarea {
 }
 
 body {
+  justify-content: center;
   background: url(landscape.png);
-  background-size: 100% auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   box-sizing: 100% auto;
   color: #fbeee0;
   font-family: "SUSE";
   margin: 0;
 }
+
+#predictionBody {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  margin: 0; 
+}
+
 
 nav {
   text-align: right;
@@ -72,10 +85,23 @@ nav li {
   height: 100%;
   width: 50%;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
-  display: flex; /* Make #right a flex container */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
+
+#healthDataTitle {
+  text-align: center;
+  color: #f38a8b;
+  font-family: "Lexend Exa";
+}
+
+
+p {
+  color: white;
+  text-align: center; 
+}
+
 
 h1,
 header {
@@ -90,6 +116,72 @@ main {
   width: 50%;
   padding-left: 20%;
 }
+
+#wrapper {
+  display: flex;
+  margin-top: 35px;
+  margin-bottom: 305px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 20px;
+}
+
+
+form .idContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px; 
+}
+
+
+form label {
+  margin-bottom: 5px; 
+  font-weight: bold; 
+  font-size: 20px;
+}
+
+form {
+  background-color:black;
+  border-radius: 15px; 
+  padding: 10px; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 65px;
+}
+
+form input,
+form select,
+form button {
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  font-size: 16px; 
+}
+
+#ageSexRow {
+  display: flex; 
+  gap: 1rem; 
+}
+
+#predResultContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  text-align: center; 
+  background-color: black;
+  color: white; 
+  border-radius: 15px;
+  padding: 20px; 
+  max-width: 600px;
+}
+
+#predictionResultHeader {
+  color:#f38a8b;
+}
+
 
 button {
   background-color: #fbeee0;
@@ -154,3 +246,5 @@ footer {
   font-style: italic;
   clear: right;
 }
+
+

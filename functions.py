@@ -70,6 +70,6 @@ def call_model(a, b, c, d, e, f, g, h, i, j, k, l, m):
     reshapedNumPyArr = scaler.transform(np.asarray(inputtedData).reshape(1,-1))
     prediction = VCmodel.predict(reshapedNumPyArr)[0]
     if(prediction == 0):
-        return "Your results indicate no risk of having heart disease"
+        return "Your results indicate low risk of having heart disease."
     else:
-        return "Your results indicate a high chance of having heart disease"
+        return "Your results indicate a high chance of having heart disease."
