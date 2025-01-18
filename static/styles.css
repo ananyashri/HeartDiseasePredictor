@@ -189,6 +189,11 @@ form button {
   color:#f38a8b;
 }
 
+#vocabHeader {
+  color:#f38a8b;
+  font-weight: bold;
+  font-size: x-large;
+}
 
 button {
   background-color: #fbeee0;

@@ -13,11 +13,11 @@ def index():
 def renderEnterData(): 
     return render_template('enterData.html')
 
-'''
-@app.route('/prediction')
-def renderPrediction():
-    return render_template('prediction.html')
-'''
+
+@app.route('/medicalTerms')
+def renderMedicalTerms():
+    return render_template('medicalTerms.html')
+
 
 @app.route('/submitted', methods=['POST'])
 def submitted():

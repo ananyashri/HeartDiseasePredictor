@@ -1,0 +1,151 @@
+@ -0,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bitter:ital,wght@0,100..900;1,100..900&family=Chicle&family=Dongle&family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lexend+Exa&family=Mandali&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=SUSE:wght@100..800&display=swap"
+    rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/3843/3843010.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Uses AI to predict whether a user has heart disease based off of user's medical data, using various ML models."
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Heart Disease Predictor</title>
+  </head>
+
+
+  <body id = "enterDataBody">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="./enterData">Predict</a></li>
+        <li><a href="./medicalTerms">Medical Terms</a></li>
+      </ul>
+    </nav>
+
+
+  <div id="wrapper">
+  <main>
+  
+    <form action="/submitted" method="POST" id="healthForm">
+
+      <h1 id="healthDataTitle">Medical Terms</h1>
+      <p>
+       On this page, you will see definitions and the contexts within which they are used for all medical data we ask. Please make sure you read this
+       page thoroughly and understand every term before filling out the form to ensure optimal accuracy for your prediction! Most of this data can be acquired
+       through your doctor or other medical professionals. 
+      </p>
+
+      
+      <div class="form-column">
+        
+        <div class="idContainer">
+          <label for="Age" id = 'vocabHeader'>Age</label>
+          <div class="static-content">The number of years a person has lived since birth.</div>
+        </div>
+
+        <div class="idContainer">
+          <label for="Sex" id = 'vocabHeader'>Sex</label>
+          <div class="static-content">A classification of individuals as male or female, based on biological, physiological, or genetic traits.</div>
+        </div>
+  
+        <div class="idContainer">
+          <label for="chest pain" id = 'vocabHeader'>Chest Pain</label>
+          <div class="static-content">A sensation of discomfort or pain in the chest area, which can be caused by various conditions, including heart problems (e.g., angina), lung issues, or musculoskeletal problems.
+          </div>
+        </div>
+   
+
+        <div class="idContainer">
+          <label for="resting blood pressure" id = 'vocabHeader'>Resting Blood Pressure</label>
+          <div class="static-content">The pressure of blood against the walls of arteries when the heart is at rest between beats. It is measured in millimeters of mercury (mmHg) and recorded as systolic pressure (top number) over diastolic pressure (bottom number).</div>
+        </div>
+    
+
+        <div class="idContainer">
+          <label for="cholesterol" id = 'vocabHeader'>Cholesterol</label>
+          <div class="static-content">A type of fat found in the blood, essential for building cells and hormones. High levels of certain types of cholesterol, such as low-density lipoprotein (LDL), can increase the risk of heart disease.</div>
+        </div>
+
+        <div class="idContainer">
+          <label for="fbs" id = 'vocabHeader'>Fasted Blood Sugar</label>
+          <div class="static-content">The level of glucose in the blood after a person has not eaten or drunk anything (except water) for at least 8 hours. It is used to assess for diabetes or other metabolic conditions.          </div>
+      </div>
+   
+
+      <div class="form-column">
+        <div class="idContainer">
+            <label for="fbs" id = 'vocabHeader'>Resting Electrocardiograph Results</label>
+            <div class="static-content">Findings from an electrocardiogram (ECG) taken while the person is at rest. It measures the electrical activity of the heart and can indicate abnormalities like arrhythmias, ischemia, or structural heart problems.
+            </div>
+        </div>
+
+        <div class="idContainer">
+          <label for="thalatch" id = 'vocabHeader'>Max Heart Rate Achieved</label>
+          <div class="static-content">The highest heart rate a person reaches during physical activity or exercise. It is often measured during stress tests to evaluate heart function.
+          </div>
+        </div>
+
+        <div class="idContainer">
+          <label for="exang" id = 'vocabHeader'>Exercise Induced Angina</label>
+          <div class="static-content">Chest pain or discomfort that occurs during physical exertion due to reduced blood flow to the heart muscle, often indicating underlying coronary artery disease.
+          </div>
+        </div>
+
+        <div class="idContainer">
+          <label for="oldpeak" id = 'vocabHeader'>Oldpeak ECG Result</label>
+          <div class="static-content">A measurement of the depression of the ST segment in an ECG, typically recorded during or after exercise. It reflects a decrease in blood flow to the heart and may indicate ischemia.
+
+          </div>
+        </div>
+
+        <div class="idContainer">
+          <label for="slope" id = 'vocabHeader'>Slope</label>
+          <div class="static-content">In the context of an ECG, the slope of the ST segment during a stress test can indicate heart health:
+
+            Upsloping: Generally normal.
+            Flat: May indicate borderline ischemia.
+            Downsloping: Suggests significant heart disease or ischemia.
+            </div>
+        </div>
+
+        <div class="idContainer">
+          <label for="ca" id = 'vocabHeader'>Number of Obstructed Blood Vessels</label>
+          <div class="static-content">The count of major coronary arteries showing significant narrowing or blockage due to atherosclerosis, often assessed using imaging techniques or angiography.
+          </div>
+        </div>
+
+        <div class="idContainer">
+          <label for="thal" id = 'vocabHeader'>Thalassemia</label>
+          <div class="static-content">A genetic blood disorder that affects the body's ability to produce hemoglobin and red blood cells. Types include:
+            Normal: No thalassemia.
+            Fixed Defect: Indicates the presence of a genetic abnormality affecting red blood cells.
+            Reversible Defect: Suggests a form of thalassemia with less severe, potentially manageable symptoms.</div>
+      </div>
+
+
+    </form>
+  </main>
+</div>
+
+      
+       
+      </main>
+
+      <footer>
+        Copyright © 2024 MWEHEHEHHEHEHEH <br />
+        <a href="mailto:NAN"
+          >No email link just yet!</a
+        >
+      </footer>
+  </body>
+</html>
