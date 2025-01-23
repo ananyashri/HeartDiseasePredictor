@@ -46,124 +46,125 @@
       </p>
 
       
-      <div class="form-column">
+      
+        <div class="pair">
+          <div class="idContainer">
+            <label for="Age">Age</label>
+            <input type="text" id="Age" name="Age" required />
+          </div>
+
+          <div class="idContainer">
+            <label for="Sex">Sex</label>
+            <select id="sex" name="sex" required>
+              <option value="" disabled selected></option>
+              <option value="1" >Male</option>
+              <option value="0">Female</option>
+            </select>
+          </div>
+          <div class="idContainer">
+            <label for="chest pain">Chest Pain</label>
+            <select id="chest_pain" name="chest_pain" required>
+              <option value="" disable selected></option>
+              <option value="0" >Low</option>
+              <option value="1" >Moderate</option>
+              <option value="2" >High</option>
+              <option value="3" >Very High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pair">
+          <div class="idContainer">
+            <label for="resting blood pressure">Resting Blood Pressure</label>
+            <input type="text" id="resting_blood_pressure" name="resting_blood_pressure" required />
+          </div>
+          <div class="idContainer">
+            <label for="cholesterol">Cholesterol</label>
+            <input type="text" id="cholesterol" name="cholesterol" required />
+          </div>
+        </div>
+
+        <div class = "pair">
+          <div class="idContainer">
+            <label for="fbs">Fasted Blood Sugar</label>
+            <select id="fbs" name="fbs" required>
+              <option value="" disable selected></option>
+              <option value="1" >greater than 120 mg/dl</option>
+              <option value="0" >less than 120 mg/dl</option>
+            </select>
+          </div>
         
-        <div class="idContainer">
-          <label for="Age">Age</label>
-          <input type="text" id="Age" name="Age" required />
+          <div class="idContainer">
+            <label for="restecg">Resting Electrocardiograph Results</label>
+            <select id="restecg" name="restecg" required>
+              <option value="" disable selected></option>
+              <option value="0" >Normal (0)</option>
+              <option value="1" >ST-T Wave Abnormality (1)</option>
+              <option value="2" >Left Ventricular Abnormality (2)</option>
+            </select>
+          </div>
         </div>
 
-        <div class="idContainer">
-          <label for="Sex">Sex</label>
-          <select id="sex" name="sex" required>
-            <option value="" disabled selected></option>
-            <option value="1" >Male</option>
-            <option value="0">Female</option>
-          </select>
-        </div>
-  
-   
+        <div class = "pair">
+          <div class="idContainer">
+            <label for="thalatch">Max Heart Rate Achieved</label>
+            <input type="text" id="thalatch" name="thalatch" required />
+          </div>
 
-        <div class="idContainer">
-          <label for="chest pain">Chest Pain</label>
-          <select id="chest_pain" name="chest_pain" required>
-            <option value="" disable selected></option>
-            <option value="0" >Low</option>
-            <option value="1" >Moderate</option>
-            <option value="2" >High</option>
-            <option value="3" >Very High</option>
-          </select>
-        </div>
-   
+          <div class="idContainer">
+            <label for="exang">Exercise Induced Angina</label>
+            <select id="exang" name="exang" required>
+              <option value="" disable selected></option>
+              <option value="0" >True</option>
+              <option value="1" >False</option>
+            </select>
+          </div>
 
-        <div class="idContainer">
-          <label for="resting blood pressure">Resting Blood Pressure</label>
-          <input type="text" id="resting_blood_pressure" name="resting_blood_pressure" required />
-        </div>
-    
-
-        <div class="idContainer">
-          <label for="cholesterol">Cholesterol</label>
-          <input type="text" id="cholesterol" name="cholesterol" required />
+          <div class="idContainer">
+            <label for="oldpeak">Oldpeak ECG Result</label>
+            <input type="text" id="oldpeak" name="oldpeak" required />
+          </div>
         </div>
 
-        <div class="idContainer">
-          <label for="fbs">Fasted Blood Sugar</label>
-          <select id="fbs" name="fbs" required>
-            <option value="" disable selected></option>
-            <option value="1" >greater than 120 mg/dl</option>
-            <option value="0" >less than 120 mg/dl</option>
-          </select>
-        </div>
-      </div>
-   
+        <div class="pair">
+          <div class="idContainer">
+            <label for="slope">Slope</label>
+            <select id="slope" name="slope" required>
+              <option value="" disable selected></option>
+              <option value="0" >Upslope</option>
+              <option value="1" >Horizontal</option>
+              <option value="2" >Downslope</option>
+            </select>
+          </div>
 
-      <div class="form-column">
-        <div class="idContainer">
-          <label for="restecg">Resting Electrocardiograph Results</label>
-          <select id="restecg" name="restecg" required>
-            <option value="" disable selected></option>
-            <option value="0" >Normal (0)</option>
-            <option value="1" >ST-T Wave Abnormality (1)</option>
-            <option value="2" >Left Ventricular Abnormality (2)</option>
-          </select>
-        </div>
+          <div class="idContainer">
+            <label for="ca">Obstructed Blood Vessels</label>
+            <select id="ca" name="ca" required>
+              <option value="" disable selected></option>
+              <option value="0" >No major colored vessels</option>
+              <option value="1" >1 major colored vessel</option>
+              <option value="2" >2 major colored vessels</option>
+              <option value="3" >3 major colored vessels</option>
+              <option value="4" >4 major colored vessels</option>
+            </select>
+          </div>
 
-        <div class="idContainer">
-          <label for="thalatch">Max Heart Rate Achieved</label>
-          <input type="text" id="thalatch" name="thalatch" required />
+          <div class="idContainer">
+            <label for="thal">Thalassemia</label>
+            <select id="thal" name="thal" required>
+              <option value="" disable selected></option>
+              <option value="1" >Normal</option>
+              <option value="2" >Fixed Defect</option>
+              <option value="3" >Reversable defect</option>
+            </select>
+          </div>
         </div>
-
-        <div class="idContainer">
-          <label for="exang">Exercise Induced Angina</label>
-          <select id="exang" name="exang" required>
-            <option value="" disable selected></option>
-            <option value="0" >True</option>
-            <option value="1" >False</option>
-          </select>
+      
+        <div id="submitbtn">
+          <a href="./submitted">
+            <button type="submit">Submit All</button>
+          </a>
         </div>
-
-        <div class="idContainer">
-          <label for="oldpeak">Oldpeak ECG Result</label>
-          <input type="text" id="oldpeak" name="oldpeak" required />
-        </div>
-
-        <div class="idContainer">
-          <label for="slope">Slope</label>
-          <select id="slope" name="slope" required>
-            <option value="" disable selected></option>
-            <option value="0" >Upslope</option>
-            <option value="1" >Horizontal</option>
-            <option value="2" >Downslope</option>
-          </select>
-        </div>
-
-        <div class="idContainer">
-          <label for="ca">Number of Obstructed Blood Vessels</label>
-          <select id="ca" name="ca" required>
-            <option value="" disable selected></option>
-            <option value="0" >No major colored vessels</option>
-            <option value="1" >1 major colored vessel</option>
-            <option value="2" >2 major colored vessels</option>
-            <option value="3" >3 major colored vessels</option>
-            <option value="4" >4 major colored vessels</option>
-          </select>
-        </div>
-
-        <div class="idContainer">
-          <label for="thal">Thalassemia</label>
-          <select id="thal" name="thal" required>
-            <option value="" disable selected></option>
-            <option value="1" >Normal</option>
-            <option value="2" >Fixed Defect</option>
-            <option value="3" >Reversable defect</option>
-          </select>
-        </div>
-      </div>
-
-      <a href="./submitted" id = 'submitAll'>
-      <button type="submit">Submit All</button>
-    </a>
 
 
     </form>
