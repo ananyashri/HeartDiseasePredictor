@@ -12,8 +12,9 @@ button,
 button:hover,
 input,
 select,
-textarea {
-  cursor: url(./hcursor.png), auto;
+textarea,
+label {
+  cursor: url(./hcursor1.png), auto;
 }
 
 body {
